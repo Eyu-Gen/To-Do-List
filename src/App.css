@@ -1,16 +1,16 @@
-*{
+* {
   box-sizing: border-box;
-  margin: 0; 
+  margin: 0;
   padding: 0;
 }
 
-.center{
+.center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.mainContainer{
+.mainContainer {
   background-color: white;
   width: 50vw;
   min-height: 70vh;
@@ -20,7 +20,7 @@
   box-shadow: 0px 5px 10px rgb(217, 217, 217);
 }
 
-.headerSection{
+.headerSection {
   background: linear-gradient(to right, #647af6, #7a45bf);
   width: 100%;
   height: 8rem;
@@ -28,34 +28,32 @@
   color: white;
 }
 
-.inputSection{
+.inputSection {
   width: 100%;
   height: 8rem;
 }
 
-.inputs{
-  margin: 0 50px;
-  width: 100%;
+.inputs {
+  width: 80%;
   justify-content: space-between;
-  
-  .addTaskInput{
-    width:78%;
+
+  .addTaskInput {
+    width: 75%;
     height: 3rem;
     border-radius: 7px;
     border: 2px solid grey;
     font-size: 1rem;
-    margin-right: 10px;
     padding-left: 20px;
     transition: all 0.5s ease;
-    
-    &:focus{
+
+    &:focus {
       outline: none;
       border: 2px solid #3700ff;
       box-shadow: 0 0 5px rgba(0, 38, 255, 0.5);
     }
   }
-  
-  button{
+
+  button {
     width: 20%;
     height: 3rem;
     border: none;
@@ -64,14 +62,14 @@
     color: white;
     background: linear-gradient(to right, #647af6, #7a45bf);
     transition: all 0.5s ease;
-    
-    &:hover{
+
+    &:hover {
       box-shadow: 0 2px 5px #593cffb0;
     }
   }
 }
 
-hr{
+hr {
   border: none;
   height: 1px;
   background-color: #dcdcdc;
@@ -79,50 +77,149 @@ hr{
   margin: 0 auto;
 }
 
-@media (max-width: 1024px) and (min-width: 768px) {
-  .mainContainer{
-    width: 70vw;
-  }
+.taskMainContainer {
+  background-color: white;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 30px;
 
-  .inputs{
-    width: 100%;
-    margin: 0 30px;
+  .taskContainer {
+    width: 80%;
+    height: 5rem;
+    min-height: max-content;
+    padding: 0 2rem;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 2px solid rgb(218, 218, 218);
+    justify-content: space-between;
 
-    .addTaskInput{
-      width: 80%;
+    .tasks {
+      justify-content: flex-start;
+      width: 90%;
+
+      .checkBox {
+        width: 20px;
+        height: 20px;
+        margin-right: 20px;
+      }
+
+      .taskLabel {
+        margin: 20px 0px 20px 0px;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: rgba(43, 43, 43, 0.781);
+        width: 90%;
+        overflow-wrap: anywhere;
+      }
+
+      .checkBox:checked + .taskLabel {
+        text-decoration: line-through;
+        color: gray;
+      }
     }
 
-    button{
-      width: 18%;
+    .deleteTaskBTN {
+      overflow: hidden;
+      width: 5%;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
 }
 
+@media (max-width: 1024px) and (min-width: 768px) {
+  .mainContainer {
+    width: 70vw;
+  }
+
+  .taskMainContainer {
+    margin-top: 10px;
+    
+    .taskContainer {
+      height: 4rem;
+      padding: 0 1rem;
+
+      .tasks {
+        justify-content: flex-start;
+        width: 90%;
+        
+        .checkBox {
+          width: 15px;
+          height: 15px;
+          margin-right: 10px;
+        }
+        
+        .taskLabel {
+          margin: 10px 0px 10px 0px;
+          font-size: 0.8rem;
+        }
+      }
+
+      .deleteTaskBTN {
+        width: 7%;
+        }
+      }
+    }
+}
+
 @media (max-width: 767px) {
-  .mainContainer{
+  .mainContainer {
     width: 90vw;
   }
 
-  .inputSection{
+  .inputSection {
     height: 7rem;
   }
+  
+  .inputs {
+    width: 90%;
 
-  .inputs{
-    width: 100%;
-    margin: 0 20px;
-    
-    .addTaskInput{
+    .addTaskInput {
       height: 2.5rem;
       width: 70%;
-      padding-left: 15px;
-      font-size: 0.9rem;
+      padding-left: 10px;
+      font-size: 0.8rem;
     }
-    
-    button{
+
+    button {
       height: 2.5rem;
-      width: 27%;
-      font-size: 0.9rem;
+      width: 25%;
+      font-size: 0.8rem;
     }
   }
 
+  .taskMainContainer {
+    margin-top: 10px;
+    
+    .taskContainer {
+      height: 3rem;
+      padding: 0 1rem;
+      width: 90%;
+
+      .tasks {
+        justify-content: flex-start;
+        width: 90%;
+        
+        .checkBox {
+          width: 15px;
+          height: 15px;
+          margin-right: 10px;
+        }
+        
+        .taskLabel {
+          margin: 10px 0px 10px 0px;
+          font-size: 0.8rem;
+        }
+      }
+
+      .deleteTaskBTN {
+        width: 7%;
+        }
+      }
+    }
 }

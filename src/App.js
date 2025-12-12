@@ -3,11 +3,27 @@ import { useState } from "react";
 import Task from "./Task.js";
 
 function App() {
-  const [task, setTask] = useState("");   
-  const [submittedTask, setSubmittedTask] = useState(""); 
+  const [inputText, setInputText] = useState("");
+  const [tasks, setTasks] = useState([]);
 
-  const passTask = () => {
-    setSubmittedTask(task);
+  const handleChange = (event) => {
+    setInputText(event.target.value);
+  };
+
+  const handleClick = () => {
+    if (inputText.trim() === "") return;
+    setTasks([...tasks, inputText]);
+    setInputText("");
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleClick();
+    }
+  };
+
+  const deleteTask = (index) => {
+    setTasks(tasks.filter((_, i) => i !== index));
   };
 
   return (
@@ -22,19 +38,23 @@ function App() {
             className="addTaskInput"
             type="text"
             placeholder="Add a new task..."
-            onChange={(e) => setTask(e.target.value)}
+            value={inputText}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
           />
-          <button className="addTaskBTN center" onClick={passTask}>
+          <button className="addTaskBTN center" onClick={handleClick}>
             Add Task
           </button>
         </div>
       </div>
-
       <hr />
-      {submittedTask && <Task submittedTask={submittedTask} />}
+      <div className="taskMainContainer center">
+        {tasks.map((task, index) => (
+          <Task key={index} task={task} onDelete={() => deleteTask(index)} />
+        ))}
+      </div>
     </div>
   );
 }
-
 
 export default App;
