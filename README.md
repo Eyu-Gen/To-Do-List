@@ -8,7 +8,7 @@ A simple To-Do List application built with React JS that allows users to add, di
 - Display the submitted task immediately.
 - Responsive design for desktop, tablet, and mobile.
 - Built using React functional components and state management with useState.
-- Alerts or notifications on task submission.
+- Alerts or notifications on task deletion.
 
 ## 🛠 Technologies Used
 
