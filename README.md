@@ -31,7 +31,7 @@ npm install
 - Start the development server:
 npm start
 
-- Open the app in your browser at http://localhost:3000.
+- Open the app in your browser at (https://to-do-list-yugin.vercel.app/).
 
 ## 📌 Usage
 
