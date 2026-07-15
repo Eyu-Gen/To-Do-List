@@ -4,12 +4,8 @@ import Task from "./Task";
 
 function App() {
 
-  // const arr = [{title: "task1", status: "completed"}, {title: "task2", status: "pending"}];
-
   const [inputText, setInputText] = useState("");
   const [tasks, setTasks] = useState([]);
-
-
 
   const handleChange = (event) => {
     setInputText(event.target.value);
@@ -36,14 +32,6 @@ function App() {
     const parsedTasks = JSON.parse(storedTasks);
     setTasks(parsedTasks);
 
-    parsedTasks.map((task) => {
-      if (task.status === "completed") {
-        const checkbox = document.querySelector(`input[value="${task.title}"]`);
-        if (checkbox) {
-          checkbox.checked = true;
-        }
-      }
-    });
   }, []);
 
   const handleKeyDown = (event) => {
