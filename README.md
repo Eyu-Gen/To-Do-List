@@ -8,7 +8,7 @@ A simple To-Do List application built with React JS that allows users to add, di
 - Display the submitted task immediately.
 - Responsive design for desktop, tablet, and mobile.
 - Built using React functional components and state management with useState.
-- Alerts or notifications on task submission.
+- Alerts or notifications on task deletion.
 
 ## 🛠 Technologies Used
 
@@ -31,7 +31,7 @@ npm install
 - Start the development server:
 npm start
 
-- Open the app in your browser at http://localhost:3000.
+- Open the app in your browser at (https://to-do-list-yugin.vercel.app/).
 
 ## 📌 Usage
 
